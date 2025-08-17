@@ -1,11 +1,12 @@
-
-
-
+from Player import Player
 
 
 def main():
 
- print("Hello World!")
+    Name = input("Enter your name: ")
+    player = Player(Name)
+    print(player.Character.Team)
+
 
 
 if __name__ == "__main__":
