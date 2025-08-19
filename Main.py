@@ -32,14 +32,11 @@ def main():
         # Validate input
         if choice in starter_map:
             starter_id = starter_map[choice]
-            starter_pokemon = Pokemon(starter_id)
-            player.Character.add_to_team(starter_pokemon,level= 1)
+            starter_pokemon = Pokemon.GetLeveled(starter_id,level=1)
+            player.Character.add_to_team(starter_pokemon)
         else:
             print("Invalid selection! Please enter 1, 2, or 3.")
 
-        # Show current team
-        print("Your team:")
-        print(player.show_team())
     else:
         try:
             Saves = SystemFunctions.FetchSave_Data()
@@ -66,20 +63,21 @@ def main():
             print("Please enter a number.")
             Choice = None
         try:
-            player_saves = Saves[Saves["Name"] == Choice]
+            # player_saves = Saves[Saves["Name"] == Choice]
             player = Player(Choice)
-            for _, row in player_saves.iterrows():
-                if str(row["ID"]) == "0":
-                    continue
-                pokemon = Pokemon(poke_id=row["ID"])
-                player.Character.add_to_team(pokemon, level=row["Level"], xp=["XP"])
+            SystemFunctions.Load_Game(player)
         except Exception as e:
             print(f"Error loading save: {e}")
+
+    player.Character.add_to_team(Pokemon.GetLeveled(poke_id=150, level=50))
     player.show_team()
 
+    # SystemFunctions.Save_Game(player)
 
+    player.Character.Team[0] = Pokemon.GetLeveled(poke_id=player.Character.Team[0].id,level=player.Character.Team[0].level +1)
+    player.show_team()
 
-
+    player.show_team()
 
 if __name__ == "__main__":
     main()

@@ -1,13 +1,5 @@
-Name,Pokemon,ID,Level,Health,XP,Attack,Defense,Speed,Special,Zone,Total,Average
-Keegan,Charmander,4,1,39,0,52,43,65,50,0.0,249,49.8
-Keegan,,0,0,0,0,0,0,0,0,,0,0.0
-Keegan,,0,0,0,0,0,0,0,0,,0,0.0
-Keegan,,0,0,0,0,0,0,0,0,,0,0.0
-Keegan,,0,0,0,0,0,0,0,0,,0,0.0
-Keegan,,0,0,0,0,0,0,0,0,,0,0.0
-Kade,Squirtle,7,1,44,0,48,65,43,50,0.0,250,50.0
-Kade,,0,0,0,0,0,0,0,0,,0,0.0
-Kade,,0,0,0,0,0,0,0,0,,0,0.0
-Kade,,0,0,0,0,0,0,0,0,,0,0.0
-Kade,,0,0,0,0,0,0,0,0,,0,0.0
-Kade,,0,0,0,0,0,0,0,0,,0,0.0
+Name,Pokemon,ID,Level,Max HP,Current HP,XP,Attack,Defense,Speed,Special,Zone,Total,Average
+Keegan,Charmander,4,1,11,9,5,6,5,6,6,0.0,249,49.8
+Keegan,Mew,151,50,160,160,0,105,105,105,105,25.0,500,100.0
+Kade,Squirtle,7,1,11,11,0,5,6,5,6,0.0,250,50.0
+Kade,Mew,151,50,160,160,0,105,105,105,105,25.0,500,100.0
