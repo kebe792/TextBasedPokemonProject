@@ -66,5 +66,19 @@ class Pokemon:
         else:
             raise ValueError("Unknown growth type")
     
+    def save(self):
+        # cast values to native Python types so JSON can handle them
+        return {
+            "id": int(self.id),
+            "level": int(self.level),
+            "xp": int(self.xp)
+        }
+
+    @classmethod
+    def load(cls, data, csv_file="KantoPokemon.csv"):
+        poke = cls.GetLeveled(data["id"], data["level"], csv_file=csv_file)
+        poke.xp = data.get("xp", 0)
+        return poke
+    
     def __str__(self):
         return f"{self.name} (Lvl {self.level}) - HP:{self.hp}, Atk:{self.attack}, Def:{self.defense}, Spd:{self.speed}, Spc:{self.special})"
