@@ -7,18 +7,6 @@ class Player:
         self.Name = Name
         self.Character = Character()
 
-    def add_to_team(self, pokemon, level):
-        # Find the first empty row (assuming 'Pokemon' == 0 means empty)
-        empty_index = self.Character.Team.index[self.Character.Team["Pokemon"] == ""].tolist()
-        
-        if empty_index:
-            i = empty_index[0]
-            # Fill in the Team row: Name, Level, HP, XP
-            self.Character.Team.loc[i] = [pokemon.name, pokemon.id,level, pokemon.hp, 0]
-            print(f"{pokemon.name} added to {self.Name}'s team in slot {i+1}!")
-        else:
-            print("Your team is full! Cannot add more Pokémon.")
-
     def show_team(self):
         print(self.Character.Team)
 

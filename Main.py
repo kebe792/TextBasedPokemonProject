@@ -33,7 +33,7 @@ def main():
         if choice in starter_map:
             starter_id = starter_map[choice]
             starter_pokemon = Pokemon(starter_id)
-            player.add_to_team(starter_pokemon,level= 1)
+            player.Character.add_to_team(starter_pokemon,level= 1)
         else:
             print("Invalid selection! Please enter 1, 2, or 3.")
 
@@ -47,20 +47,39 @@ def main():
         except FileNotFoundError:
             print("No save file found! Starting new game instead.")
         
-        Choice = input(f"Please select Save: {Saved_Names}")
+        print("Please select Save:")
+        for i, name in enumerate(Saved_Names, 1):
+            print(f"{i}. {name}")
+
+        choice_num = input("> ")
+
+        # Validate input
+        try:
+            choice_num = int(choice_num)
+            if 1 <= choice_num <= len(Saved_Names):
+                Choice = Saved_Names[choice_num - 1]
+                print(f"You selected: {Choice}")
+            else:
+                print("Invalid selection.")
+                Choice = None
+        except ValueError:
+            print("Please enter a number.")
+            Choice = None
         try:
             player_saves = Saves[Saves["Name"] == Choice]
             player = Player(Choice)
             for _, row in player_saves.iterrows():
-                if str(row["Pokemon"]) == "NaN":
+                if str(row["ID"]) == "0":
                     continue
                 pokemon = Pokemon(poke_id=row["ID"])
-                player.add_to_team(pokemon, level=row["Level"])
+                player.Character.add_to_team(pokemon, level=row["Level"], xp=["XP"])
         except Exception as e:
             print(f"Error loading save: {e}")
-
     player.show_team()
-    Player.Save_Game(player)
+
+
+
+
 
 if __name__ == "__main__":
     main()
