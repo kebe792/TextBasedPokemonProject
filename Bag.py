@@ -1,4 +1,5 @@
 from Item import Item
+from PokeBalls import Pokeball, GreatBall, UltraBall
 
 class Bag:
     def __init__(self):
@@ -15,6 +16,16 @@ class Bag:
         print("Bag contents:")
         for item_name, info in self.contents.items():
             print(f"{item_name}: {info['quantity']}")
+
+    def list_pokeballs(self):
+        return {
+            name: {
+                "quantity": info["quantity"],
+                "catch_rate": info["item"].catch_rate
+            }
+            for name, info in self.contents.items()
+            if isinstance(info["item"], Pokeball) and info["quantity"] > 0
+        }
 
 
     def save(self):

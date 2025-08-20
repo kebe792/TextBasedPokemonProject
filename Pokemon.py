@@ -15,7 +15,6 @@ class Pokemon:
 
         self.id = row["ID"]
         self.name = row["Pokémon"]
-        self.zone = row["Zone"]
         self.base_hp = row["HP"]
         self.base_attack = row["Attack"]
         self.base_defense = row["Defense"]
@@ -24,6 +23,8 @@ class Pokemon:
         self.total = row["Total"]
         self.average = row["Average"]
         self.Base_Growth = row["Growth"]
+        self.City = row["City"]
+        self.Catch_Rate = row["Catch Rate"]
 
         # Default level = 1
         self.level = 1

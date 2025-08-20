@@ -3,17 +3,19 @@
         "Bag": {
             "Pokeball": {
                 "item": {
+                    "type": "Pokeball",
                     "name": "Pokeball",
                     "description": "A Pokeball used to catch Pok\u00e9mon"
                 },
-                "quantity": 20
-            },
-            "Great Ball": {
-                "item": {
-                    "name": "Great Ball",
-                    "description": "A Great Ball used to catch Pok\u00e9mon"
-                },
                 "quantity": 10
+            },
+            "Master Ball": {
+                "item": {
+                    "type": "MasterBall",
+                    "name": "Master Ball",
+                    "description": "A Master Ball used to catch Pok\u00e9mon"
+                },
+                "quantity": 9
             }
         },
         "Team": [
@@ -21,32 +23,13 @@
                 "id": 4,
                 "level": 1,
                 "xp": 0
-            }
-        ]
-    },
-    "Test": {
-        "Bag": {
-            "Pokeball": {
-                "item": {
-                    "name": "Pokeball",
-                    "description": "A Pokeball used to catch Pok\u00e9mon"
-                },
-                "quantity": 20
             },
-            "Great Ball": {
-                "item": {
-                    "name": "Great Ball",
-                    "description": "A Great Ball used to catch Pok\u00e9mon"
-                },
-                "quantity": 10
-            }
-        },
-        "Team": [
             {
-                "id": 7,
-                "level": 1,
+                "id": 150,
+                "level": 5,
                 "xp": 0
             }
-        ]
+        ],
+        "Location": "Pallet Town"
     }
 }
