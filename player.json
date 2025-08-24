@@ -7,15 +7,15 @@
                     "name": "Pokeball",
                     "description": "A Pokeball used to catch Pok\u00e9mon"
                 },
-                "quantity": 10
+                "quantity": 56
             },
             "Master Ball": {
                 "item": {
-                    "type": "MasterBall",
-                    "name": "Master Ball",
-                    "description": "A Master Ball used to catch Pok\u00e9mon"
+                    "type": "UltraBall",
+                    "name": "Ultra Ball",
+                    "description": "A Ultra Ball used to catch Pok\u00e9mon"
                 },
-                "quantity": 9
+                "quantity": 10
             }
         },
         "Team": [
@@ -25,8 +25,23 @@
                 "xp": 0
             },
             {
-                "id": 150,
-                "level": 5,
+                "id": 19,
+                "level": 4,
+                "xp": 0
+            },
+            {
+                "id": 21,
+                "level": 2,
+                "xp": 0
+            },
+            {
+                "id": 23,
+                "level": 3,
+                "xp": 0
+            },
+            {
+                "id": 19,
+                "level": 1,
                 "xp": 0
             }
         ],

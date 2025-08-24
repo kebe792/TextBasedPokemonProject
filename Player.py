@@ -12,8 +12,13 @@ class Player(Character):
         self.current_city = start_city
 
     def show_team(self):
-        for poke in self.Team:
-            print(poke)
+        if not self.Team:
+            return "Your team is empty!"
+
+        team_lines = []
+        for i, poke in enumerate(self.Team, 1):
+            team_lines.append(f"{i}. {poke.name} (Lv. {poke.level})")
+        return "\n".join(team_lines)
 
     def check_level_up(self):
             for i, poke in enumerate(self.Team):
@@ -85,24 +90,18 @@ class Player(Character):
 
         bag_ball = self.Bag.contents.get(ball_name)
         if not bag_ball or bag_ball["quantity"] <= 0:
-            print(f"You don't have any {ball_name}s!")
-            return False
+            return f"You don't have any {ball_name}s!"
 
         # Consume one ball
         bag_ball["quantity"] -= 1
 
-        # Simple catch formula
-        # pokemon.Catch_Rate can be > 100
-        # ball.catch_rate is 0-1
         if bag_ball["item"].name == "Master Ball":
             chance = 1.00
         else:
             chance = min(1.0, (pokemon.Catch_Rate / 255) * bag_ball["item"].catch_rate)
 
         if random.random() <= chance:
-            print(f"Congratulations! You caught {pokemon.name}!")
             self.Team.append(pokemon)
-            return True
+            return f"Congratulations! You caught {pokemon.name}!"
         else:
-            print(f"Oh no! {pokemon.name} broke free!")
-            return False
+            return f"Oh no! {pokemon.name} broke free!"

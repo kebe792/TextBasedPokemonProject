@@ -22,5 +22,8 @@ class Item:
         elif item_type == "UltraBall":
             from PokeBalls import UltraBall
             return UltraBall()
+        elif item_type == "MasterBall":
+            from PokeBalls import UltraBall
+            return UltraBall()
         else:
             return cls(data["name"], data.get("description", ""))

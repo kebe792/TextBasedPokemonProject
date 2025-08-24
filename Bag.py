@@ -10,7 +10,7 @@ class Bag:
             self.contents[item.name]["quantity"] += quantity
         else:
             self.contents[item.name] = {"item": item, "quantity": quantity}
-        print(f"Added {quantity} x {item.name} to the bag.")
+        return f"Added {quantity} x {item.name} to the bag."
 
     def show_contents(self):
         print("Bag contents:")
